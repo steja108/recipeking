@@ -1,0 +1,79 @@
+/* DashFooter.css */
+.dash-footer {
+    background: white;
+    border-top: 1px solid #e5e7eb;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0.8rem 0;
+    margin-top: 1000px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dash-footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.dash-footer__user-info {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+/* DashFooter.css */
+.dash-footer__home-button {
+    color: var(--primary-red);
+    font-size: 1.8rem; /* Increased from 1.4rem */
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px; /* Increased from 40px */
+    height: 50px; /* Increased from 40px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.dash-footer__home-button:hover {
+    background-color: rgba(242, 17, 17, 0.1);
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(242, 17, 17, 0.2);
+}
+
+.dash-footer__home-button::after {
+    content: "Return Home";
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-gray);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.dash-footer__home-button:hover::after {
+    opacity: 1;
+}
+
+.dash-footer__home-button .fa-icon {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}

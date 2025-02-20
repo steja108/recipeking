@@ -1,0 +1,206 @@
+/* Home.module.css */
+/* Header */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+  .headerContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logoImg {
+    height: 120px;
+    width: 180px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navLink {
+    color: #f21111;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  
+  .navLink:hover {
+    color: #1F2937;
+  }
+  
+  .headerButtons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Sections */
+  .section {
+    color:white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    transform: translateY(20px);
+  }
+  
+  .sectionVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .sectionContent {
+    text-align: center;
+    color: white;
+    padding: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+
+  #section1 {
+    background: url('https://www.howsweeteats.com/wp-content/uploads/2020/12/apricot-chicken-6-1.jpg') no-repeat center center/cover;
+  }
+  
+  #section2 {
+    background: url('https://www.wfla.com/wp-content/uploads/sites/71/2023/04/GettyImages-1407832840.jpg?w=2560&h=1440&crop=1') no-repeat center center/cover;
+  }
+  
+  #section3 {
+    background: url('https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/11/21/FNK_Intsant-Pot-Texas-Style-Chili-Mac_H1.jpg.rend.hgtvcom.1280.960.suffix/1700604212111.jpeg') no-repeat center center/cover;
+  }
+  /* Footer */
+  .footer {
+    color: #000000;
+    background: white;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+  }
+  
+  .footerContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .footerGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .footerColumn {
+    padding-left: 2rem;
+  }
+  
+  .footerHeading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .footerList {
+    color: #000000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footerListItem {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footerBottom {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 2rem;
+    font-size: 0.875rem;
+  }
+  
+.footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .footerLink {
+    color: #f60000; /* Changed from #6b7280 to darker gray */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footerLink:hover {
+    color: #07326f; /* Dark gray on hover */
+  }
+  .footerText {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+  
+  /* Add this to make links more visible in the copyright section */
+  .footerBottom p {
+    color: #4B5563;
+  }
+  
+  /* Buttons */
+  .button {
+    color: #f21111;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 1.2rem 3.4rem;
+    border: 2px solid #e82e15;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DC2626;
+    transition: top 0.4s;
+    z-index: -1;
+  }
+  
+  .button:hover::before {
+    top: 0;
+  }
+  
+  .button:hover {
+    color: white;
+  }

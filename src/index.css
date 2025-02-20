@@ -1,0 +1,181 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --primary-red: #f21111;
+  --dark-gray: #1F2937;
+  --light-gray: #6B7280;
+  --background-white: #ffffff;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+.main-content {
+  padding: 80px 0 100px; /* Adjust based on header/footer height */
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  background-color: var(--background-white);
+  min-height: 100vh;
+}
+
+/* Shared button styles */
+.button {
+  background-color: var(--primary-red);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Add to your global CSS */
+.form {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  padding-bottom: 100px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-red);
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+  font-weight: 600;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.form__input:focus {
+  border-color: var(--primary-red);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(242, 17, 17, 0.1);
+}
+
+.form__input--text {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.form__select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+}
+
+.form__action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.image-preview {
+  margin: 1rem 0;
+  max-width: 300px;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.icon-button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary-red);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  background: #e00000;
+  transform: scale(1.1);
+}
+
+.icon-button:disabled {
+  background: #fca5a5;
+  cursor: not-allowed;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table__th {
+  background: var(--primary-red);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+}
+
+.table__td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table__row:hover {
+  background: #fef2f2;
+}
+
+.table__button {
+  background: transparent;
+  border: none;
+  color: var(--primary-red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.table__button:hover {
+  color: #e00000;
+  transform: scale(1.1);
+}

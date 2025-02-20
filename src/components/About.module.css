@@ -1,0 +1,198 @@
+/* About.module.css */
+.aboutContainer {
+    --main-bg-color: #ff0000;
+    background: linear-gradient(45deg, var(--main-bg-color), #000000);
+    transition: background 0.5s;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+  }
+  
+  .crazySection {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .glitchContainer {
+    position: relative;
+    animation: glitch 2s infinite;
+  }
+  
+  .glitchText {
+    font-size: 5rem;
+    color: #fff !important;
+    position: relative;
+    text-shadow: 3px 3px 0 cyan, -3px -3px 0 magenta;
+    z-index: 3; /* Add this */
+    mix-blend-mode: normal !important; 
+  }
+  
+  .glitchText::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    color: cyan;
+    clip: rect(0, 900px, 0, 0);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+  }
+  
+  .glitchLines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      white 2px,
+      white 4px
+    );
+    opacity: 0.2;
+    z-index: 2;
+  }
+  
+  .teamSection {
+    background: radial-gradient(circle, #000000 0%, #1a1a1a 100%);
+  }
+  
+  .teamGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .teamMember {
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    transition: all 0.3s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+  }
+  
+  .teamMember:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 30px rgba(255,0,0,0.5);
+  }
+  
+  .memberImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-size: cover;
+    border: 3px solid #ff0000;
+  }
+  
+  .memberName {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1rem 0;
+    text-shadow: 0 0 10px #ff0000;
+  }
+
+  .memberRole {
+    color: #fff !important;
+    text-align: center;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #ff0000;
+  }
+  
+  .missionSection {
+    background: linear-gradient(45deg, #000000, #ff0000);
+  }
+  
+  .animatedText {
+    font-size: 4rem;
+    text-align: center;
+    animation: colorChange 2s infinite;
+  }
+  
+  .strobe {
+    animation: strobe 0.1s infinite;
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes glitch-anim {
+    0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); }
+    100% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); }
+  }
+  
+  @keyframes colorChange {
+    0% { color: #ff0000; }
+    33% { color: #00ff00; }
+    66% { color: #0000ff; }
+    100% { color: #ff0000; }
+  }
+  
+  @keyframes strobe {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .hoverReveal {
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .missionText {
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    background: rgba(0,0,0,0.7);
+    border-radius: 15px;
+  }
+  
+  .missionText:hover .hoverReveal {
+    opacity: 1;
+  }
+  
+  .secretIngredient {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .secretIngredient span {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes glitch-anim {
+    0% { clip-path: inset(20% 0 30% 0); }
+    100% { clip-path: inset(10% 0 40% 0); }
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .rotate {
+    animation: rotate 2s linear infinite;
+  }

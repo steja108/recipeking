@@ -1,0 +1,218 @@
+/* General container styling */
+.signup-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  /* Left Panel */
+  .left-panel {
+    width: 50%;
+    color: #000000;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo-img1 {
+    width: 180px;
+    height: 120px;
+  }
+  
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a202c;
+  }
+  
+  .signup-heading {
+    margin-top: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a202c;
+  }
+  
+  .social-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-btn {
+    padding: 0.75rem;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    color: gray;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social-btn:hover {
+    background-color: #e2e8f0;
+  }
+  
+  .or-text {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .signup-form {
+    width: 100%;
+    max-width: 20rem;
+    margin-top: 1.5rem;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #2d3748;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .password-icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    cursor: pointer;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3182ce;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup-button:hover {
+    background-color: #2b6cb0;
+  }
+  
+  .signin-text {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #000000;
+  }
+  
+  .signin-link {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .signin-link:hover {
+    color: red;
+    text-decoration: underline;
+  }
+  
+  /* Right Panel */
+  .right-panel {
+    width: 50%;
+    background-image: url('https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #718096;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    color: #4a5568;
+  }
+  
+  .error-text {
+    color: red;
+  }
+  
+  .success-text {
+    color: green;
+  }
+  .persist-check{
+    color: #1a202c;
+    font-size: 1rem;
+  }
+
+
+  /* Add these to your existing Login.css */
+
+/* Signup specific adjustments */
+.signup-heading {
+  margin-bottom: 1.5rem;
+}
+
+.password-rules {
+  font-size: 0.875rem;
+  color: #718096;
+  margin: 0.5rem 0;
+}
+
+.terms-text {
+  font-size: 0.875rem;
+  color: #718096;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.terms-link {
+  color: #3182ce;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .signup-container {
+      flex-direction: column;
+  }
+  
+  .left-panel, .right-panel {
+      width: 100%;
+      height: auto;
+  }
+  
+  .right-panel {
+      display: none;
+  }
+}

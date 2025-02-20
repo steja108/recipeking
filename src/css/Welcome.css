@@ -1,0 +1,236 @@
+/* Welcome.css */
+.welcome-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.welcome-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark-gray);
+    font-size: 2.5rem;
+}
+
+.welcome-title .subtitle {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--light-gray);
+    margin-top: 0.5rem;
+    font-weight: 400;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+.recipe-card-link {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-container {
+    position: relative;
+    height: 250px;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 3px solid var(--primary-red);
+}
+
+/* Heart Animation Styles */
+.favorite-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.heart {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    background-image: url('https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 2900%;
+    transition: background-position 0.5s;
+}
+
+.heart:hover:not(.is-saved) {
+    background-position: right;
+}
+
+.heart.is_animating {
+    animation: heart-burst 0.8s steps(28) 1;
+}
+
+.heart.is-saved {
+    background-position: right;
+}
+
+@keyframes heart-burst {
+    from { background-position: left; }
+    to { background-position: right; }
+}
+
+
+
+.recipe-category {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: var(--primary-red);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    z-index: 1;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.recipe-title {
+    font-size: 1.3rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    min-height: 60px;
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--light-gray);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.star {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+.star.filled {
+    color: #ffd700;
+}
+
+.rating-count {
+    color: var(--light-gray);
+    font-size: 0.9rem;
+}
+
+.add-recipe-button {
+    display: block;
+    width: fit-content;
+    margin: 3rem auto 0;
+    padding: 1rem 2rem;
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.add-recipe-button:hover {
+    background: #e00000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(240, 17, 17, 0.3);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-red);
+    border-radius: 50%;
+    margin: 2rem auto;
+    animation: spin 1s linear infinite;
+}
+
+.error-message {
+    text-align: center;
+    color: var(--primary-red);
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Search Bar Styles */
+.search-container {
+    margin: 2rem auto;
+    max-width: 600px;
+    width: 90%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9c46a;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    border-color: #2a9d8f;
+    box-shadow: 0 4px 8px rgba(42, 157, 143, 0.2);
+}
+
+.subtitle {
+    display: block;
+    font-size: 1.2rem;
+    color: #264653;
+    margin-top: 0.5rem;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+

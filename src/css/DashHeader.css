@@ -1,0 +1,75 @@
+/* DashHeader.css */
+.dash-header {
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 0 2rem;
+    height: 100px;
+}
+
+.dash-header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.dash-header__logo {
+    height: 80px;
+    width: auto;
+}
+
+.dash-header__nav-icons {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.dash-header__icon-button {
+    color: var(--primary-red);
+    font-size: 1.8rem; /* Increased from 1.4rem */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px; /* Increased from 40px */
+    height: 50px; /* Increased from 40px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.dash-header__icon-button::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-gray);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.dash-header__icon-button:hover::after {
+    opacity: 1;
+}
+
+.dash-header__icon-button .fa-icon {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
