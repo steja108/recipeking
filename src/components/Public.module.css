@@ -1,206 +1,354 @@
-/* Home.module.css */
-/* Header */
+/* Public.module.css */
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Base layout */
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-  
-  .headerContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.headerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 120px;
+  width: 180px;
+  object-fit: contain;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: #f21111;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 800;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #1F2937;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Sections */
+.section {
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+/* Default state for animations */
+.section {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(20px);
+}
+
+/* Visible state for animations */
+.sectionVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add padding-top to first section to account for fixed header */
+.firstSection {
+  padding-top: 120px;
+}
+
+.sectionContent {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  z-index: 2;
+}
+
+.sectionTitle {
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Make sure section backgrounds are properly displayed */
+#section1 {
+  background: url('https://www.howsweeteats.com/wp-content/uploads/2020/12/apricot-chicken-6-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#section2 {
+  background: url('https://www.wfla.com/wp-content/uploads/sites/71/2023/04/GettyImages-1407832840.jpg?w=2560&h=1440&crop=1');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#section3 {
+  background: url('https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/11/21/FNK_Intsant-Pot-Texas-Style-Chili-Mac_H1.jpg.rend.hgtvcom.1280.960.suffix/1700604212111.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Force sections to display regardless of animation state */
+#section1, #section2, #section3 {
+  display: flex !important;
+}
+
+/* Footer */
+.footer {
+  color: #000000;
+  background: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1rem;
+}
+
+.footerBottom {
+  padding-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footerLink {
+  color: #f60000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #07326f;
+}
+
+.footerText {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.button {
+  color: #f21111;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1.2rem 3.4rem;
+  border: 2px solid #e82e15;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DC2626;
+  transition: top 0.4s;
+  z-index: -1;
+}
+
+.button:hover::before {
+  top: 0;
+}
+
+.button:hover {
+  color: white;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #f21111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.mobileNav {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobileButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Styles */
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
   .logoImg {
-    height: 120px;
-    width: 180px;
+    height: 70px;
+    width: 110px;
   }
   
-  .nav {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .navLink {
-    color: #f21111;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-weight: 800;
-  }
-  
-  .navLink:hover {
-    color: #1F2937;
-  }
-  
-  .headerButtons {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  /* Sections */
-  .section {
-    color:white;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 1s ease, transform 1s ease;
-    transform: translateY(20px);
-  }
-  
-  .sectionVisible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .sectionContent {
-    text-align: center;
-    color: white;
-    padding: 2rem;
+  .firstSection {
+    padding-top: 90px;
   }
   
   .sectionTitle {
-    font-size: 4rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
   }
   
   .sectionSubtitle {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  }
-
-  #section1 {
-    background: url('https://www.howsweeteats.com/wp-content/uploads/2020/12/apricot-chicken-6-1.jpg') no-repeat center center/cover;
+    font-size: 1rem;
   }
   
-  #section2 {
-    background: url('https://www.wfla.com/wp-content/uploads/sites/71/2023/04/GettyImages-1407832840.jpg?w=2560&h=1440&crop=1') no-repeat center center/cover;
-  }
-  
-  #section3 {
-    background: url('https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/11/21/FNK_Intsant-Pot-Texas-Style-Chili-Mac_H1.jpg.rend.hgtvcom.1280.960.suffix/1700604212111.jpeg') no-repeat center center/cover;
-  }
-  /* Footer */
-  .footer {
-    color: #000000;
-    background: white;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem 1rem;
-  }
-  
-  .footerContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-  
-  .footerGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem 0;
-    border-top: 1px solid #e5e7eb;
-  }
-  
-  .footerColumn {
-    padding-left: 2rem;
-  }
-  
-  .footerHeading {
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .footerList {
-    color: #000000;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footerListItem {
-    margin-bottom: 0.75rem;
-  }
-  
-  .footerBottom {
-    border-top: 1px solid #e5e7eb;
-    padding-top: 2rem;
-    font-size: 0.875rem;
-  }
-  
-.footerLinks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .footerLink {
-    color: #f60000; /* Changed from #6b7280 to darker gray */
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .footerLink:hover {
-    color: #07326f; /* Dark gray on hover */
-  }
-  .footerText {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  
-  
-  /* Add this to make links more visible in the copyright section */
-  .footerBottom p {
-    color: #4B5563;
-  }
-  
-  /* Buttons */
   .button {
-    color: #f21111;
-    font-weight: 700;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 1.2rem 3.4rem;
-    border: 2px solid #e82e15;
-    background: transparent;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+  .mobileMenu {
+    display: block;
   }
   
-  .button::before {
-    content: "";
+  .nav, .headerButtons {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #DC2626;
-    transition: top 0.4s;
-    z-index: -1;
+    z-index: 1000;
   }
   
-  .button:hover::before {
-    top: 0;
+  .logoImg {
+    height: 80px;
+    width: 130px;
   }
   
-  .button:hover {
-    color: white;
+  .firstSection {
+    padding-top: 100px;
   }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+  
+  .sectionContent {
+    padding: 1.5rem;
+  }
+  
+  .button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+  
+  .footerLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sectionTitle {
+    font-size: 3rem;
+  }
+  
+  .logoImg {
+    height: 100px;
+    width: 150px;
+  }
+  
+  .button {
+    padding: 1rem 2.5rem;
+  }
+}
+
+/* Extra large devices */
+@media (min-width: 1025px) {
+  .headerContainer {
+    padding: 0.5rem 2rem;
+  }
+}
