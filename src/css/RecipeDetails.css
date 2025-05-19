@@ -1,8 +1,9 @@
 .recipe-details-container {
+
     padding-top: 80px; /* Match header height */
     padding-bottom: 40px;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 8rem auto;
     padding: 0 1rem;
 }
 
@@ -172,6 +173,108 @@
 
 .home-link:hover {
     color: #e63946;
+}
+
+/* Recipe Actions */
+.recipe-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.print-button {
+    background-color: #4a5568;
+    color: white;
+}
+
+.print-button:hover {
+    background-color: #2d3748;
+}
+
+.share-button {
+    background-color: #38a169;
+    color: white;
+}
+
+.share-button:hover {
+    background-color: #2f855a;
+}
+
+/* Reviews section styles */
+.reviews-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-to-review {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-to-review a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-to-review a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .recipe-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .action-button {
+        justify-content: center;
+    }
+    
+    .reviews-section {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media print {
+    .recipe-details-header,
+    .header-nav,
+    .recipe-actions,
+    .reviews-section,
+    .recipe-details-footer {
+        display: none !important;
+    }
+    
+    .recipe-details-container {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .recipe-content {
+        page-break-inside: avoid;
+    }
 }
 
 /* Footer Styles */
