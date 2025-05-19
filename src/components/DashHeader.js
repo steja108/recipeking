@@ -14,9 +14,11 @@ import useAuth from '../hooks/useAuth'
 import PulseLoader from 'react-spinners/PulseLoader'
 import '../css/DashHeader.css'
 import recipe_star_logo from '../img/recipe_star_logo.png'
+import AdminRoleRequestsNotification from '../features/roleRequests/AdminRoleRequestsNotification';
 const DASH_REGEX = /^\/dash(\/)?$/
 const NOTES_REGEX = /^\/dash\/notes(\/)?$/
 const USERS_REGEX = /^\/dash\/users(\/)?$/
+
 
 const DashHeader = () => {
     const { isManager, isAdmin } = useAuth()
@@ -166,6 +168,7 @@ const DashHeader = () => {
                     />
                 </Link>
                 <nav className="dash-header__nav-icons">
+                    {isAdmin && <AdminRoleRequestsNotification />}
                     {buttonContent}
                 </nav>
             </div>

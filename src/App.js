@@ -19,6 +19,7 @@ import RequireAuth from './features/auth/RequireAuth'
 import SavedRecipes from './features/saved/SavedRecipes'
 import { ROLES } from './config/roles'
 import useTitle from './hooks/useTitle';
+import AdminRoleRequestsPage from './features/admin/AdminRoleRequestsPage';
 
 function App() {
   useTitle('RecipeStar')
@@ -40,6 +41,16 @@ function App() {
               <Route path="dash" element={<DashLayout />}>
 
                 <Route index element={<Welcome />} />
+                <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+                  <Route path="users">
+                      <Route index element={<UsersList />} />
+                      <Route path=":id" element={<EditUser />} />
+                      <Route path="new" element={<NewUserForm />} />
+                  </Route>
+                  
+                  {/* Add the new admin role requests route */}
+                  <Route path="admin/role-requests" element={<AdminRoleRequestsPage />} />
+                </Route>
 
                 <Route element={<RequireAuth allowedRoles={[ROLES.Writer, ROLES.Admin]} />}>
                   <Route path="users">

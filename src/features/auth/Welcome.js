@@ -5,6 +5,8 @@ import useTitle from '../../hooks/useTitle';
 import '../../css/Welcome.css';
 import { useGetRecipesQuery } from '../recipes/recipesApiSlice';
 import { useToggleSavedRecipeMutation } from '../saved/savedApiSlice';
+import RoleRequestButton from '../roleRequests/RoleRequestButton';
+import UserRoleRequests from '../roleRequests/UserRoleRequests';
 
 const Welcome = () => {
 
@@ -93,10 +95,22 @@ const Welcome = () => {
 
     return (
         <div className="welcome-container">
+            <UserRoleRequests />
             <h1 className="welcome-title">
                 Welcome back, {username}! 🙍‍♂️🍳
                 <span className="subtitle">{filteredRecipes.length} delicious recipes found</span>
             </h1>
+
+            <div className="welcome-actions">
+                <RoleRequestButton />
+                
+                {(isManager || isAdmin) && (
+                    <Link to="/dash/recipes/new" className="add-recipe-button">
+                        + Add New Recipe
+                    </Link>
+                )}
+            </div>
+            
             <div className="search-container">
                 <input 
                     type="text"

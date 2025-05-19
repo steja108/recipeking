@@ -1,0 +1,469 @@
+/* src/features/roleRequests/RoleRequest.css */
+/* Role Request Button */
+.role-request-button {
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.role-request-button:hover {
+    background-color: #2d3748;
+}
+
+/* Modal Styles */
+.role-request-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.role-request-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.role-request-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.role-request-modal-header h3 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #2d3748;
+}
+
+.role-request-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.role-request-close-button:hover {
+    color: #4a5568;
+}
+
+.role-request-modal-body {
+    padding: 1.5rem;
+}
+
+.role-request-form {
+    margin-top: 1.25rem;
+}
+
+.role-request-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+.role-request-textarea:focus {
+    outline: none;
+    border-color: #4a5568;
+    box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.15);
+}
+
+.role-request-submit-button {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.role-request-submit-button:hover {
+    background-color: #c53030;
+}
+
+.role-request-submit-button:disabled {
+    background-color: #fed7d7;
+    cursor: not-allowed;
+}
+
+.role-request-error, 
+.role-request-success {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.role-request-error {
+    background-color: #fff5f5;
+    color: #c53030;
+    border: 1px solid #fed7d7;
+}
+
+.role-request-success {
+    background-color: #f0fff4;
+    color: #2f855a;
+    border: 1px solid #c6f6d5;
+}
+
+/* User Role Requests */
+.user-role-requests {
+    margin: 1.5rem 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.user-role-requests h3 {
+    padding: 1rem 1.5rem;
+    margin: 0;
+    background-color: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 1.15rem;
+    color: #2d3748;
+}
+
+.user-role-requests-list {
+    padding: 1rem;
+}
+
+.user-role-request-card {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.user-role-request-card.approved {
+    background-color: #f0fff4;
+    border: 1px solid #c6f6d5;
+}
+
+.user-role-request-card.rejected {
+    background-color: #fff5f5;
+    border: 1px solid #fed7d7;
+}
+
+.user-role-request-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.user-role-request-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+.mark-read-button {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: #a0aec0;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+}
+
+.mark-read-button:hover {
+    color: #4a5568;
+}
+
+.user-role-request-details {
+    font-size: 0.9rem;
+}
+
+.user-role-request-date {
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.user-role-request-note {
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.user-role-request-success-message {
+    color: #2f855a;
+    font-weight: 500;
+}
+
+/* Admin Role Requests */
+.admin-role-requests {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-role-requests-title {
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+    background-color: #2d3748;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.admin-role-requests-section {
+    margin-bottom: 2rem;
+}
+
+.admin-role-requests-subtitle {
+    padding: 1rem 1.5rem;
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2d3748;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-role-requests-list {
+    padding: 1.5rem;
+}
+
+.admin-role-request-card {
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.admin-role-request-card.pending {
+    border-left: 4px solid #3182ce;
+}
+
+.admin-role-request-card.approved {
+    border-left: 4px solid #38a169;
+    background-color: #f0fff4;
+}
+
+.admin-role-request-card.rejected {
+    border-left: 4px solid #e53e3e;
+    background-color: #fff5f5;
+}
+
+.admin-role-request-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.admin-role-request-header h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+.admin-role-request-date {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.admin-role-request-reason {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.admin-role-request-actions,
+.admin-role-request-actions-expanded {
+    margin-top: 1rem;
+}
+
+.admin-role-request-actions-expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.admin-role-request-note-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.admin-role-request-note-input:focus {
+    outline: none;
+    border-color: #4a5568;
+    box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.15);
+}
+
+.admin-role-request-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.admin-role-request-button {
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.admin-role-request-button:not(.approve):not(.reject):not(.cancel) {
+    background-color: #3182ce;
+    color: white;
+}
+
+.admin-role-request-button:not(.approve):not(.reject):not(.cancel):hover {
+    background-color: #2c5282;
+}
+
+.admin-role-request-button.approve {
+    background-color: #38a169;
+    color: white;
+}
+
+.admin-role-request-button.approve:hover {
+    background-color: #2f855a;
+}
+
+.admin-role-request-button.reject {
+    background-color: #e53e3e;
+    color: white;
+}
+
+.admin-role-request-button.reject:hover {
+    background-color: #c53030;
+}
+
+.admin-role-request-button.cancel {
+    background-color: #f7fafc;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+}
+
+.admin-role-request-button.cancel:hover {
+    background-color: #edf2f7;
+}
+
+.admin-role-request-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-role-request-note {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    font-style: italic;
+}
+
+/* Loading and Error States */
+.admin-role-requests-loading,
+.admin-role-requests-error,
+.admin-role-requests-empty,
+.role-requests-loading,
+.role-requests-error {
+    padding: 2rem;
+    text-align: center;
+    color: #718096;
+}
+
+.admin-role-requests-error,
+.role-requests-error {
+    color: #e53e3e;
+}
+
+/* Admin Notification */
+.admin-notification-link {
+    text-decoration: none;
+}
+
+.admin-notification {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #e53e3e;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.admin-notification:hover {
+    background-color: #c53030;
+}
+
+.admin-notification-count {
+    background-color: white;
+    color: #e53e3e;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .admin-role-request-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .admin-role-request-buttons {
+        flex-direction: column;
+    }
+    
+    .admin-role-request-button {
+        width: 100%;
+    }
+    
+    .admin-notification-text {
+        display: none;
+    }
+    
+    .admin-notification {
+        padding: 0.4rem;
+    }
+}
